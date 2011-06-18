@@ -1,0 +1,10 @@
+# Ignore vendors & web folders
+vendor/*
+web/bundles
+src/Acme
+
+# Ignore boostraps & cache / logs
+app/bootstrap_cache.php.cache
+app/bootstrap.php.cache
+app/cache
+app/logs
