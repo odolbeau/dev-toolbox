@@ -1,0 +1,2 @@
+olitaz_toolbox:
+    resource: "@OlitazToolboxBundle/Resources/config/routing.yml"
