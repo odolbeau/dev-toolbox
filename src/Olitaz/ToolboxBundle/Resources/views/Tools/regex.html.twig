@@ -9,7 +9,39 @@
         <div style="clear: both;">&nbsp;</div>
         <div class="entry">
             <p>
-                <textarea cols="50" rows="10"></textarea>
+                <form action="{{ path('regex') }}" method="post" {{ form_enctype(form) }}>
+                    <fieldset title="Regex tester">
+                        <legend>Regex Tester</legend>
+                        {{ form_errors(form) }}
+                        <table>
+                            <tr>
+                                <td>{{ form_label(form.type) }}</td>
+                                <td>
+                                    {{ form_errors(form.type) }}
+                                    {{ form_widget(form.type) }}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>{{ form_label(form.pattern) }}</td>
+                                <td>
+                                    {{ form_errors(form.pattern) }}
+                                    {{ form_widget(form.pattern, { 'attr': {'cols': '65', 'rows' : '3'} }) }}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>{{ form_label(form.subject) }}</td>
+                                <td>
+                                    {{ form_errors(form.subject) }}
+                                    {{ form_widget(form.subject, { 'attr': {'cols': '65', 'rows' : '7'} }) }}
+                                </td>
+                            </tr>
+                        </table>
+
+                        {{ form_rest(form) }}
+
+                        <input type="submit" />
+                    </fieldset>
+                </form>
             </p>
             <p class="links"><a href="#">Read More</a>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" title="b0x w">Comments</a></p>
         </div>
