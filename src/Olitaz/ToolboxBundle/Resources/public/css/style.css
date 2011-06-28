@@ -176,12 +176,12 @@ a:hover {
 	border: none;
 }
 
-#menu a:hover, #menu .current_page_item a {
+#menu a:hover, #menu .current a {
 	background: #2AA1CC;
 	text-decoration: none;
 }
 
-#menu .current_page_item a {
+#menu .current a {
 }
 
 /* Page */

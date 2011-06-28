@@ -21,6 +21,8 @@ class AppKernel extends Kernel
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
             new JMS\SecurityExtraBundle\JMSSecurityExtraBundle(),
 
+            new Knplabs\Bundle\MenuBundle\KnplabsMenuBundle(),
+
             new Olitaz\ToolboxBundle\OlitazToolboxBundle(),
         );
 

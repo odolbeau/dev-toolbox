@@ -48,3 +48,7 @@
 [AsseticBundle]
     git=http://github.com/symfony/AsseticBundle.git
     target=/bundles/Symfony/Bundle/AsseticBundle
+
+[KnplabsMenuBundle]
+    git=https://github.com/knplabs/MenuBundle.git
+    target=/bundles/Knplabs/Bundle/MenuBundle
