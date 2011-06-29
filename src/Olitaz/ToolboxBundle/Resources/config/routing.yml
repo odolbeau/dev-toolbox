@@ -4,3 +4,6 @@ homepage:
 regex:
     pattern:  /regex
     defaults: { _controller: OlitazToolboxBundle:Tools:regex }
+xml_indent:
+    pattern:  /xml-indent
+    defaults: { _controller: OlitazToolboxBundle:Tools:xmlIndent }

@@ -20,5 +20,6 @@ class MainMenu extends Menu
 
         $this->addChild('Home', $router->generate('homepage'));
         $this->addChild('Regex', $router->generate('regex'));
+        $this->addChild('XML Indent', $router->generate('xml_indent'));
     }
 }

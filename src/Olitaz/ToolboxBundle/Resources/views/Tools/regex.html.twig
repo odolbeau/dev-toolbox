@@ -25,7 +25,7 @@
                                 <td>{{ form_label(form.pattern) }}</td>
                                 <td>
                                     {{ form_errors(form.pattern) }}
-                                    {{ form_widget(form.pattern, { 'attr': {'cols': '65', 'rows' : '3'} }) }}
+                                    {{ form_widget(form.pattern, { 'attr': {'cols': '65', 'rows' : '2'} }) }}
                                 </td>
                             </tr>
                             <tr>
@@ -41,6 +41,14 @@
 
                         <input type="submit" />
                     </fieldset>
+                    {% if(result is not null) %}
+                        <fieldset title="Result">
+                            <legend>Result</legend>
+                            <div class="result">
+                                <pre>{{ result }}</pre>
+                            </div>
+                        </fieldset>
+                    {% endif %}
                 </form>
             </p>
             <p class="links"><a href="#">Read More</a>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" title="b0x w">Comments</a></p>

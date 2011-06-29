@@ -4,59 +4,89 @@ namespace Olitaz\ToolboxBundle\Entity;
 
 use Symfony\Component\Validator\Constraints as Assert;
 
-class Regex {
+class Regex
+{
 
     /**
      * @Assert\Choice(
-     *     choices = { "preg_match", "preg_replace" },
+     *     choices = { "preg_match_all", "preg_replace" },
      *     message = "Choose."
      * )
      */
-    private $type;
+    protected $type;
     /**
      * @Assert\NotBlank()
      */
-    private $pattern;
+    protected $pattern;
     /**
      * @Assert\NotBlank()
      */
-    private $subject;
-    private $replacement;
-    
-    public function __construct() {
-        $this->setType('preg_match');
+    protected $subject;
+    protected $replacement;
+
+    public function __construct()
+    {
+        $this->setType('preg_match_all');
     }
 
+    /**
+     * Process the regex
+     *
+     * @return type
+     */
+    public function process()
+    {
+        switch ($this->type) {
+            case 'preg_match_all':
+                $count = preg_match_all($this->pattern, $this->subject, $matches);
+                return $matches;
+                break;
+            case 'preg_replace':
+                $result = preg_replace($this->pattern, $this->replacement, $this->subject, -1, $count);
+                return $result;
+                break;
+            default:
+                return null;
+        }
+    }
 
-    public function getType() {
+    public function getType()
+    {
         return $this->type;
     }
 
-    public function setType($type) {
+    public function setType($type)
+    {
         $this->type = $type;
     }
 
-    public function getPattern() {
+    public function getPattern()
+    {
         return $this->pattern;
     }
 
-    public function setPattern($pattern) {
+    public function setPattern($pattern)
+    {
         $this->pattern = $pattern;
     }
 
-    public function getSubject() {
+    public function getSubject()
+    {
         return $this->subject;
     }
 
-    public function setSubject($subject) {
+    public function setSubject($subject)
+    {
         $this->subject = $subject;
     }
 
-    public function getReplacement() {
+    public function getReplacement()
+    {
         return $this->replacement;
     }
 
-    public function setReplacement($replacement) {
+    public function setReplacement($replacement)
+    {
         $this->replacement = $replacement;
     }
 

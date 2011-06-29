@@ -1,0 +1,43 @@
+{% extends "OlitazToolboxBundle::layout.html.twig" %}
+
+{% block title "XML Indent - Dev-Toolbox" %}
+
+{% block content %}
+    <div class="post">
+        <h1 class="title"><a href="#">XML Indent</a></h1>
+        <p class="meta"><span class="date">Last update: Jun 29, 2011</span></p>
+        <div style="clear: both;">&nbsp;</div>
+        <div class="entry">
+            <p>
+                <form action="{{ path('xml_indent') }}" method="post" {{ form_enctype(form) }}>
+                    <fieldset title="XML Indent">
+                        <legend>XML Indent</legend>
+                        {{ form_errors(form) }}
+                        <table>
+                            <tr>
+                                <td>{{ form_label(form.content) }}</td>
+                                <td>
+                                    {{ form_errors(form.content) }}
+                                    {{ form_widget(form.content) }}
+                                </td>
+                            </tr>
+                        </table>
+
+                        {{ form_rest(form) }}
+
+                        <input type="submit" />
+                    </fieldset>
+                    {% if(result is defined and result is not null) %}
+                        <fieldset title="Result">
+                            <legend>Result</legend>
+                            <div class="result">
+                                <pre>{{ result }}</pre>
+                            </div>
+                        </fieldset>
+                    {% endif %}
+                </form>
+            </p>
+            <p class="links"><a href="#">Read More</a>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" title="b0x w">Comments</a></p>
+        </div>
+    </div>
+{% endblock %}
