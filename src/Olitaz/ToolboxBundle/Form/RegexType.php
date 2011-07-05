@@ -15,6 +15,7 @@ class RegexType extends AbstractType
             'expanded' => true
         ));
         $builder->add('pattern', 'textarea');
+        $builder->add('replacement', 'textarea');
         $builder->add('subject', 'textarea');
     }
 

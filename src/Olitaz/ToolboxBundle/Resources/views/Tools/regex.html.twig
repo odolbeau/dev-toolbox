@@ -29,10 +29,17 @@
                                 </td>
                             </tr>
                             <tr>
+                                <td>{{ form_label(form.replacement) }}</td>
+                                <td>
+                                    {{ form_errors(form.replacement) }}
+                                    {{ form_widget(form.replacement, { 'attr': {'cols': '65', 'rows' : '2'} }) }}
+                                </td>
+                            </tr>
+                            <tr>
                                 <td>{{ form_label(form.subject) }}</td>
                                 <td>
                                     {{ form_errors(form.subject) }}
-                                    {{ form_widget(form.subject, { 'attr': {'cols': '65', 'rows' : '7'} }) }}
+                                    {{ form_widget(form.subject, { 'attr': {'cols': '65', 'rows' : '6'} }) }}
                                 </td>
                             </tr>
                         </table>
@@ -41,11 +48,11 @@
 
                         <input type="submit" />
                     </fieldset>
-                    {% if(result is not null) %}
+                    {% if(result is defined) %}
                         <fieldset title="Result">
                             <legend>Result</legend>
                             <div class="result">
-                                <pre>{{ result }}</pre>
+                                {% if(add_pre is defined) %}<pre>{% endif %}{{ result }}{% if(add_pre is defined) %}</pre>{% endif %}
                             </div>
                         </fieldset>
                     {% endif %}

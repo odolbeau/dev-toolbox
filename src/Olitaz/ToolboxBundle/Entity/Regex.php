@@ -38,12 +38,20 @@ class Regex
     {
         switch ($this->type) {
             case 'preg_match_all':
-                $count = preg_match_all($this->pattern, $this->subject, $matches);
-                return $matches;
+                try {
+                    $count = preg_match_all($this->pattern, $this->subject, $matches);
+                    return $matches;
+                } catch(\Exception $e) {
+                    return $e->getMessage();
+                }
                 break;
             case 'preg_replace':
-                $result = preg_replace($this->pattern, $this->replacement, $this->subject, -1, $count);
-                return $result;
+                try {
+                    $result = preg_replace($this->pattern, $this->replacement, $this->subject, -1, $count);
+                    return $result;
+                } catch(\Exception $e) {
+                    return $e->getMessage();
+                }
                 break;
             default:
                 return null;

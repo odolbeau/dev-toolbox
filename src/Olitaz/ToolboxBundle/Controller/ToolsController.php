@@ -26,14 +26,21 @@ class ToolsController extends Controller
                 $result = $regex->process();
                 if (is_array($result)) {
                     $result = print_r($result, true);
+                    $addPre = true;
                 }
             }
         }
 
-        return $this->render('OlitazToolboxBundle:Tools:regex.html.twig', array(
+        $vars = array(
             'form' => $form->createView(),
-            'result' => isset($result) ? $result : null
-        ));
+        );
+        if(isset($result)) {
+            $vars['result'] = $result;
+        }
+        if(isset($addPre)) {
+            $vars['add_pre'] = $addPre;
+        }
+        return $this->render('OlitazToolboxBundle:Tools:regex.html.twig', $vars);
     }
 
     public function xmlIndentAction()
@@ -42,8 +49,20 @@ class ToolsController extends Controller
 
         $form = $this->createForm(new XmlType(), $xml);
 
+        $request = $this->get('request');
+        if ($request->getMethod() == 'POST') {
+            $form->bindRequest($request);
+
+            if ($form->isValid()) {
+                // Process Xml
+                $result = $xml->process();
+            }
+        }
+
         return $this->render('OlitazToolboxBundle:Tools:xml_indent.html.twig', array(
-            'form' => $form->createView()
+            'form' => $form->createView(),
+            'result' => isset($result) ? $result : null
         ));
     }
+
 }

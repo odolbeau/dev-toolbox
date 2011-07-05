@@ -21,5 +21,9 @@ class Xml
     {
         $this->content = $content;
     }
+ 
+    public function process() {
+        return 'ok';
+    }
 
 }
