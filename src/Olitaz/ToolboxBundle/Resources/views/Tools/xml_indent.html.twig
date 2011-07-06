@@ -2,6 +2,11 @@
 
 {% block title "XML Indent - Dev-Toolbox" %}
 
+{% block left_desc %}
+    <h2>What's XML Indent ?</h2>
+    <p>You have horrible XML unreadable because without indentation? Don't worry, XML Indent is here to help you! :D</p>
+{% endblock %}
+
 {% block content %}
     <div class="post">
         <h1 class="title"><a href="#">XML Indent</a></h1>
@@ -18,7 +23,7 @@
                                 <td>{{ form_label(form.content) }}</td>
                                 <td>
                                     {{ form_errors(form.content) }}
-                                    {{ form_widget(form.content) }}
+                                    {{ form_widget(form.content, { 'attr': {'cols': '65', 'rows' : '6'} }) }}
                                 </td>
                             </tr>
                         </table>

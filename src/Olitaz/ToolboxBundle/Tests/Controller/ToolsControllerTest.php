@@ -16,4 +16,13 @@ class ToolsControllerTest extends WebTestCase
         $this->assertTrue($crawler->filter('h1:contains("Regex tester")')->count() > 0);
     }
 
+    public function testXmlIndent()
+    {
+        $client = $this->createClient();
+
+        $crawler = $client->request('GET', '/xml-indent');
+
+        $this->assertTrue($crawler->filter('h1:contains("XML Indent")')->count() > 0);
+    }
+
 }

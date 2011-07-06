@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<networks>
+  <network name="Debian Servers" id="debian_servers">
+    <servers>
+      <server ssl="FALSE" port="6667" address="irc.debian.org"/>
+    </servers>
+  </network>
+  <network name="2600net" id="a2600net">
+    <servers>
+      <server ssl="FALSE" port="6667" address="irc.2600.net"/>
+    </servers>
+  </network>
+  <network name="AccessIRC" id="accessirc">
+    <servers>
+      <server ssl="FALSE" port="6667" address="irc.accessirc.net"/>
+      <server ssl="FALSE" port="6667" address="eu.accessirc.net"/>
+    </servers>
+  </network>
+  <network name="Xentonix.net" id="xentonix.net">
+    <servers>
+      <server ssl="FALSE" port="6667" address="irc.ffm.de.eu.xentonix.net"/>
+      <server ssl="FALSE" port="6667" address="irc.kar.de.eu.xentonix.net"/>
+      <server ssl="FALSE" port="6667" address="irc.vie.at.eu.xentonix.net"/>
+    </servers>
+  </network>
+  <network name="XWorld" id="xworld">
+    <servers>
+      <server ssl="FALSE" port="6667" address="Buffalo.NY.US.XWorld.org"/>
+      <server ssl="FALSE" port="6667" address="Minneapolis.MN.US.Xworld.Org"/>
+      <server ssl="FALSE" port="6667" address="Rochester.NY.US.XWorld.org"/>
+      <server ssl="FALSE" port="6667" address="Bayern.DE.EU.XWorld.Org"/>
+      <server ssl="FALSE" port="6667" address="Chicago.IL.US.XWorld.Org"/>
+    </servers>
+  </network>
+</networks>

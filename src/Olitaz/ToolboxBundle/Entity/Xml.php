@@ -23,7 +23,20 @@ class Xml
     }
  
     public function process() {
-        return 'ok';
+        try {
+            $xml = new \XMLReader();
+            $xml->xml($this->content);
+            $xml->setParserProperty(\XMLReader::VALIDATE, true);
+            if($xml->isValid()) {
+                while($xml->read()) {
+
+                }
+            } else {
+                return false;
+            }
+        } catch(\Exception $e) {
+            return $e->getMessage();
+        }
     }
 
 }
