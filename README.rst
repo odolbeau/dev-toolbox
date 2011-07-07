@@ -1,40 +1,22 @@
-Symfony Standard Edition
-========================
+DEV-TOOLBOX
+===========
 
 What's inside?
 --------------
 
-Symfony Standard Edition comes pre-configured with the following bundles:
+dev-toolbox contains some developers tools:
 
-* FrameworkBundle
-* SensioFrameworkExtraBundle
-* DoctrineBundle
-* TwigBundle
-* SwiftmailerBundle
-* MonologBundle
-* AsseticBundle
-* JMSSecurityExtraBundle
-* WebProfilerBundle (in dev/test env)
-* SymfonyWebConfiguratorBundle (in dev/test env)
-* AcmeDemoBundle (in dev/test env)
-
-Installation from an Archive
-----------------------------
-
-The easiest way to get started is to download an archive with vendors included
-(http://symfony.com/download). Unpack it somewhere under your web server root
-directory and you're done.
-
-If you have downloaded an archive without the vendors, you must have ``git``
-available to install the vendors:
-
-    php bin/vendors install
+* Regex Test: Test your regex quickly
+* XML Indent: Indent and colorize an unreadable XML
 
 Installation from Git
 ---------------------
 
-We highly recommend you that you download the packaged version of this
-distribution. If you still want to use Git, your are on your own.
+The easiest way to get started is to clone the project form git.
+
+When you're done, the only thing you have to do is installing vendors using:
+
+    php bin/vendors install
 
 Run the following commands:
 
