@@ -12,7 +12,7 @@ dev-toolbox contains some developers tools:
 Installation from Git
 ---------------------
 
-The easiest way to get started is to clone the project form git.
+The easiest way to get started is to clone the project from git.
 
 When you're done, the only thing you have to do is installing vendors using:
 
